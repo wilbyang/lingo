@@ -1,0 +1,3 @@
+rootProject.name = 'libwy-lingo'
+include 'libwy-lingo-core'
+include 'libwy-lingo-api'
