@@ -59,15 +59,15 @@ tasks.register('cucumber') {
 
 tasks.register('migrateToDev', FlywayMigrateTask) {
     url = 'jdbc:mysql://localhost:3306/todo_dev?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true'
-    user = 'todo'
-    password = 'geektime'
+    user = 'root'
+    password = 'yangbo'
     locations = ["filesystem:$rootDir/gradle/config/migration"]
 }
 
 tasks.register('migrateToTest', FlywayMigrateTask) {
     url = 'jdbc:mysql://localhost:3306/todo_test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true'
-    user = 'todo'
-    password = 'geektime'
+    user = 'root'
+    password = 'yangbo'
     locations = ["filesystem:$rootDir/gradle/config/migration"]
 }
 
