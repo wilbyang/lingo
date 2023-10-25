@@ -15,18 +15,18 @@ public class LingoService {
     private final LingoRepository lingoRepository;
 
     @Autowired
-    public LingoService(LingoRepository lingoRepository) {
+    public LingoService(final LingoRepository lingoRepository) {
         this.lingoRepository = lingoRepository;
     }
     public List<Lingo> getAllRoots() {
         var lingos = lingoRepository.findBySourceIsNull();
         return Streams.stream(lingos).toList();
     }
-    public Optional<Lingo> getById(Long id) {
+    public Optional<Lingo> getById(final Long id) {
         return lingoRepository.findById(id);
 
     }
-    public Lingo saveLingo(Lingo lingo) {
+    public Lingo saveLingo(final Lingo lingo) {
         return lingoRepository.save(lingo);
     }
 }

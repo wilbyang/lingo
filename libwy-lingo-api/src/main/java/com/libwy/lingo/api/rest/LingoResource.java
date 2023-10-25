@@ -11,9 +11,9 @@ import java.util.Optional;
 
 @RestController
 public class LingoResource {
-    private LingoService lingoService;
+    private final LingoService lingoService;
 
-    public LingoResource(LingoService lingoService) {
+    public LingoResource(final LingoService lingoService) {
         this.lingoService = lingoService;
     }
 

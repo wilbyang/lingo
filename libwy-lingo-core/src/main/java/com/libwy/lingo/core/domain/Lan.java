@@ -21,10 +21,9 @@ public enum Lan {
     NORWEGIAN("no"),
     FINNISH("fi"),
     CZECH("cs"),
-    Unknown("unknown")
-    ;
+    Unknown("unknown");
 
-    Lan(String code) {
+    Lan(final String code) {
 
     }
 }
