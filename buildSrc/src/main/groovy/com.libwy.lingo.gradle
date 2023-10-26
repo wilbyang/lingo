@@ -19,6 +19,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
     implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+    implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
     implementation("jakarta.persistence:jakarta.persistence-api:$persistenceVersion")
     implementation("org.springframework:spring-context:$springVersion")
     implementation("org.springframework.data:spring-data-commons:$springDataVersion")

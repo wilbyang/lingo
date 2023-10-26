@@ -1,19 +1,7 @@
 package com.libwy.lingo.core.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.CascadeType;
-
+import jakarta.persistence.*;
 
 
 import lombok.EqualsAndHashCode;
@@ -22,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Builder;
 
+import java.time.Instant;
 import java.util.List;
 
 @Entity
@@ -31,6 +20,7 @@ import java.util.List;
 @Setter
 public class Lingo {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String teaser;
     private String content;
@@ -51,6 +41,8 @@ public class Lingo {
     @OneToMany(mappedBy = "source", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Lingo> translations;
 
+    @Column(name = "created_time", updatable = false)
+    private Instant createdTime;
     @Builder
     public Lingo(final String teaser, final String content, final Lan lang, final User author) {
         this.teaser = teaser;
